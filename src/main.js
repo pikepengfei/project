@@ -9,6 +9,10 @@ import i18n from './locales'
 import { createApp } from 'vue'
 import App from './App.vue'
 const app = createApp(App);
+import ganttastic from '@infectoone/vue-ganttastic'
+
+
+app.use(ganttastic)
 
 app.use(store);
 app.use(router);

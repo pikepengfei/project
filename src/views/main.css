@@ -1,0 +1,91 @@
+/* src/assets/styles/main.css */
+.el-row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    box-sizing: border-box;
+}
+.el-header {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    width: 100%;
+    margin-top: 20px;
+    padding: 0;
+  }
+
+p{
+  color: #74E4F5;
+}
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #001529;
+    color: #fff;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #002140;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+
+  
+  .gantt-chart {
+    margin-top: 20px;
+    background-color: #002952;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .time-axis {
+    position: relative;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .task-row {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 5px;
+  }
+  
+  .task-bar {
+    height: 30px;
+    background-color: #0077be;
+    border-radius: 15px;
+    position: relative;
+  }
+  
+  .status-light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+  
+  .expand-arrow {
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .blue-guide-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #00a8ff;
+    display: none;
+  } */

@@ -9,6 +9,7 @@
     },
     "dependencies": {
         "@element-plus/icons": "0.0.11",
+        "@infectoone/vue-ganttastic": "^2.3.2",
         "@tinymce/tinymce-vue": "4.0.5",
         "axios": "0.24.0",
         "core-js": "3.19.2",
