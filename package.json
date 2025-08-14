@@ -1,71 +1,118 @@
 {
-    "name": "",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build --report",
-        "lint": "vue-cli-service lint"
-    },
-    "dependencies": {
-        "@element-plus/icons": "0.0.11",
-        "@infectoone/vue-ganttastic": "^2.3.2",
-        "@tinymce/tinymce-vue": "4.0.5",
-        "axios": "0.24.0",
-        "core-js": "3.19.2",
-        "cropperjs": "1.5.12",
-        "crypto-js": "4.1.1",
-        "echarts": "5.2.2",
-        "element-plus": "1.2.0-beta.6",
-        "nprogress": "0.2.0",
-        "qrcodejs2": "0.0.2",
-        "sortablejs": "1.14.0",
-        "tinymce": "5.10.2",
-        "vue": "^3.2.31",
-        "vue-i18n": "9.1.9",
-        "vue-loader-v16": "^16.0.0-beta.5.4",
-        "vue-router": "4.0.12",
-        "vuedraggable": "4.0.3",
-        "vuex": "4.0.2",
-        "xgplayer": "2.31.4",
-        "xgplayer-hls": "2.4.32-3"
-    },
-    "devDependencies": {
-        "@vue/cli-plugin-babel": "4.5.15",
-        "@vue/cli-plugin-eslint": "4.5.15",
-        "@vue/cli-service": "4.5.15",
-        "@vue/compiler-sfc": "3.2.23",
-        "babel-eslint": "10.1.0",
-        "eslint": "6.8.0",
-        "eslint-plugin-vue": "7.19.1",
-        "sass": "1.37.5",
-        "sass-loader": "10.1.1"
-    },
-    "eslintConfig": {
-        "root": true,
-        "env": {
-            "node": true
-        },
-        "globals": {
-            "APP_CONFIG": true
-        },
-        "extends": [
-            "plugin:vue/vue3-essential",
-            "eslint:recommended"
-        ],
-        "parserOptions": {
-            "parser": "babel-eslint"
-        },
-        "rules": {
-            "indent": 0,
-            "no-tabs": 0,
-            "no-mixed-spaces-and-tabs": 0,
-            "vue/no-unused-components": "off"
-        }
-    },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions",
-        "not dead"
-    ]
+	"name": "investment-report",
+	"version": "2.0",
+	"description": "vue3 vite next admin template",
+	"author": "lyt_20201208",
+	"license": "MIT",
+	"scripts": {
+		"dev": "vite --force",
+		"build": "vite build",
+		"build:test": "vite build --mode test",
+		"build:stage": "vite build --mode staging",
+		"build:prod": "vite build --mode production",
+		"build:deploy": "node scripts/deploy.js",
+		"build:deploy:test": "node scripts/deploy.js --mode=test",
+		"build:deploy:stage": "node scripts/deploy.js --mode=staging",
+		"build:deploy:prod": "node scripts/deploy.js --mode=production",
+		"deploy": "node scripts/upload-to-oss.js",
+		"deploy:test": "node scripts/upload-to-oss.js --mode=test",
+		"deploy:stage": "node scripts/upload-to-oss.js --mode=staging",
+		"deploy:prod": "node scripts/upload-to-oss.js --mode=production",
+		"config:check": "node scripts/check-oss-config.js",
+		"lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue src/",
+		"pdf:install": "pnpm add puppeteer express axios",
+		"pdf:server": "node pdf-server.js",
+		"pdf:test": "node test-pdf-generation.js",
+		"pdf:optimize": "node test-pdf-optimization.js"
+	},
+	"dependencies": {
+		"@element-plus/icons-vue": "^2.3.1",
+		"@wangeditor/editor": "^5.1.23",
+		"@wangeditor/editor-for-vue": "^5.1.12",
+		"axios": "^1.9.0",
+		"countup.js": "^2.8.0",
+		"cropperjs": "^1.6.1",
+		"echarts": "^5.5.0",
+		"echarts-gl": "^2.0.9",
+		"echarts-wordcloud": "^2.1.0",
+		"element-plus": "^2.9.11",
+		"express": "^5.1.0",
+		"html2canvas": "^1.4.1",
+		"js-cookie": "^3.0.5",
+		"js-table2excel": "^1.1.2",
+		"jspdf": "^3.0.1",
+		"jsplumb": "^2.15.6",
+		"lodash-es": "^4.17.21",
+		"markdown-it": "^14.1.0",
+		"marked": "^16.0.0",
+		"mitt": "^3.0.1",
+		"nprogress": "^0.2.0",
+		"pinia": "^3.0.2",
+		"print-js": "^1.6.0",
+		"puppeteer": "^24.15.0",
+		"qrcodejs2-fixes": "^0.0.2",
+		"qs": "^6.12.0",
+		"screenfull": "^6.0.2",
+		"sortablejs": "^1.15.2",
+		"splitpanes": "^3.1.5",
+		"unplugin-auto-import": "^19.3.0",
+		"unplugin-icons": "^22.1.0",
+		"unplugin-vue-components": "^28.7.0",
+		"vue": "^3.5.15",
+		"vue-clipboard3": "^2.0.0",
+		"vue-demi": "^0.14.7",
+		"vue-grid-layout": "^3.0.0-beta1",
+		"vue-i18n": "^9.10.2",
+		"vue-router": "^4.5.1"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.28",
+		"@types/nprogress": "^0.2.3",
+		"@types/sortablejs": "^1.15.8",
+		"@typescript-eslint/eslint-plugin": "^7.2.0",
+		"@typescript-eslint/parser": "^7.2.0",
+		"@vitejs/plugin-vue": "^5.0.4",
+		"@vue/compiler-sfc": "^3.4.21",
+		"ali-oss": "^6.23.0",
+		"autoprefixer": "^10.4.21",
+		"chalk": "4.1.2",
+		"cssnano": "^7.0.7",
+		"dotenv": "^17.2.1",
+		"eslint": "^8.57.0",
+		"eslint-plugin-vue": "^9.23.0",
+		"prettier": "^3.2.5",
+		"sass": "^1.72.0",
+		"terser": "^5.43.1",
+		"typescript": "^5.4.2",
+		"vite": "^5.1.6",
+		"vite-plugin-cdn-import": "^0.3.5",
+		"vite-plugin-compression": "^0.5.1",
+		"vite-plugin-vue-setup-extend-plus": "^0.1.0",
+		"vue-eslint-parser": "^9.4.2"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead"
+	],
+	"bugs": {
+		"url": "https://gitee.com/lyt-top/vue-next-admin/issues"
+	},
+	"engines": {
+		"node": ">=16.0.0",
+		"npm": ">= 7.0.0"
+	},
+	"keywords": [
+		"vue",
+		"vue3",
+		"vuejs/vue-next",
+		"element-ui",
+		"element-plus",
+		"vue-next-admin",
+		"next-admin"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://gitee.com/lyt-top/vue-next-admin.git"
+	}
 }
